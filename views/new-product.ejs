@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<h2>Crear producto</h2>
+
+<form method="POST" action="/productos">
+    <input type="text" name="name" placeholder="Nombre" required>
+    <input type="number" name="price" placeholder="Precio" required>
+    <input type="text" name="tags" placeholder="Tags separados por coma">
+    <button type="submit">Crear producto</button>
+</form>
+
+<a href="/productos">Volver al listado</a>
+
+
+<%- include('partials/footer') %>

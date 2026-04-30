@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+
+<div>
+    
+    <span>Bienvenido, <%= user %> </span>
+   
+</div>    
+
+<h2>Listado de Productos</h2>
+
+<a href="/productos/new">Crear Producto</a>
+
+<ul>
+<% products.forEach(p => { %> 
+    <form method="POST" action="/productos/<%= p._id %>/delete">
+        <button type="submit">Eliminar</button>  
+    </form>
+    <li>
+        <strong><%= p.name %></strong> - <%= p.price %>€
+        <br> Tags: <%= p.tags?.join(', ') %>
+        <br> Owner: <%= p.owner %>
+    </li>
+    <hr>
+<% }) %>
+</ul>    
+
+
+<%- include('partials/footer') %>
+
