@@ -6,7 +6,28 @@
 <form method="POST" action="/productos">
     <input type="text" name="name" placeholder="Nombre" required>
     <input type="number" name="price" placeholder="Precio" required>
-    <input type="text" name="tags" placeholder="Tags separados por coma">
+
+    <label>
+        <input type="checkbox" name="tags" value="work">
+        Work
+    </label>
+
+    <label>
+        <input type="checkbox" name="tags" value="lifestyle">
+        Lifestyle
+    </label>
+
+    <label>
+        <input type="checkbox" name="tags" value="motor">
+        Motor
+    </label>
+
+    <label>
+        <input type="checkbox" name="tags" value="mobile">
+        Mobile
+    </label>
+
+
     <button type="submit">Crear producto</button>
 </form>
 
