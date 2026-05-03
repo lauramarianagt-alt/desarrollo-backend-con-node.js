@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "initDB": "node ./scripts/initDB.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

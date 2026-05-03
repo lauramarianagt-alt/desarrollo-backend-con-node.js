@@ -75,24 +75,24 @@ router.post('/productos', isAuthenticated, async function(req, res, next) {
 });
 
 router.post('/productos/:id/delete', isAuthenticated, async function(req, res, next) {
-  const product = await Product.findById(req.params.id);
-  
-  if (!product) {
-    return res.status(404).send('Producto no encontrado');
+  try {
+    const result = await Product.deleteOne({ 
+      _id: req.params.id,
+      owner: req.session.user
+    });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).send('Producto no encontrado o no tiene permiso para eliminarlo');
+    }
+
+    res.redirect('/productos');
+
+  } catch (error) {
+    next(error);
   }
-
-  const owner = Array.isArray(product.owner) ? product.owner[0] : product.owner;
-
-  if (product.owner !== req.session.user) {
-    return res.status(403).send('No tienes permiso para eliminar este producto');
-  }
-
-  await Product.deleteOne({ _id: req.params.id, owner: req.session.user });
-
-  res.redirect('/productos');
 });
 
-const User = require('../models/User');
+const User = require('../models/user');
 
 
 router.get('/login', function(req, res, next) {

@@ -22,8 +22,8 @@ Autenticación:
 Los usuarios han de registrarse e iniciar sesión para acceder a la app.
 
 Cada usuario puede:
-       - Ver sus propios productos
-       - Eliminar sus propios productos
+- Ver sus propios productos
+- Eliminar sus propios productos
 
        
 P.D: En este punto dudé ya que no es un completamente un Marketplace, 
@@ -31,7 +31,7 @@ P.D: En este punto dudé ya que no es un completamente un Marketplace,
 
 
 Además, he implementado:
-       - Registro de usuarios
-       - Filtros dinámicos
-       - Separación de vista con partials
+- Registro de usuarios
+- Filtros dinámicos
+- Separación de vista con partials
 
