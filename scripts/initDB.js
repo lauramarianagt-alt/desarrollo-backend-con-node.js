@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const connectDB = require('../db');
 const Product = require('../models/Product');
-const User = require('../models/User');
+const User = require('../models/user');
 
 async function initDB() {
     try {
